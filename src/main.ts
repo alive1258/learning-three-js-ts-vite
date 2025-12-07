@@ -4,7 +4,19 @@ import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import Stats from "three/addons/libs/stats.module.js";
 import { GUI } from "dat.gui";
 
-const scene = new THREE.Scene();
+const sceneA = new THREE.Scene();
+sceneA.background = new THREE.Color(0x123456);
+
+const sceneB = new THREE.Scene();
+sceneB.background = new THREE.TextureLoader().load(
+  "https://sbcode.net/img/grid.png"
+);
+
+const sceneC = new THREE.Scene();
+sceneC.background = new THREE.CubeTextureLoader()
+  .setPath("https://sbcode.net/img/")
+  .load(["px.png", "nx.png", "py.png", "ny.png", "pz.png", "nz.png"]);
+// scene.backgroundBlurriness = 0.5;
 
 const camera = new THREE.PerspectiveCamera(
   75,
@@ -30,22 +42,29 @@ const geometry = new THREE.BoxGeometry();
 const material = new THREE.MeshNormalMaterial({ wireframe: true });
 
 const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
+sceneA.add(cube);
+// sceneCadd(cube);
 
 const stats = new Stats();
 document.body.appendChild(stats.dom);
 
+let activeScene = sceneA;
+const setScene = {
+  sceneA: () => {
+    activeScene = sceneA;
+  },
+  sceneB: () => {
+    activeScene = sceneB;
+  },
+  sceneC: () => {
+    activeScene = sceneC;
+  },
+};
+
 const gui = new GUI();
-
-const cubeFolder = gui.addFolder("Cube");
-cubeFolder.add(cube.rotation, "x", 0, Math.PI * 2);
-cubeFolder.add(cube.rotation, "y", 0, Math.PI * 2);
-cubeFolder.add(cube.rotation, "z", 0, Math.PI * 2);
-cubeFolder.open();
-
-const cameraFolder = gui.addFolder("Camera");
-cameraFolder.add(camera.position, "z", 0, 20);
-cameraFolder.open();
+gui.add(setScene, "sceneA").name("Scene A");
+gui.add(setScene, "sceneB").name("Scene B");
+gui.add(setScene, "sceneC").name("Scene C");
 
 function animate() {
   requestAnimationFrame(animate);
@@ -55,7 +74,7 @@ function animate() {
   cube.rotation.y += 0.01;
   stats.end();
 
-  renderer.render(scene, camera);
+  renderer.render(activeScene, camera);
 
   stats.update();
 }
