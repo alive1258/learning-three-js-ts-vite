@@ -54,3 +54,4 @@ Visit `https://<your github username>.github.io/Three.js-Boilerplate-TS-Vite/`
 E.g.,
 
 [https://sean-bradley.github.io/Three.js-Boilerplate-TS-Vite/](https://sean-bradley.github.io/Three.js-Boilerplate-TS-Vite/)
+# learning-three-js-ts-vite
