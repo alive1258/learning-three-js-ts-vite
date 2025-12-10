@@ -39,10 +39,11 @@ const data = { color: 0x00ff00, labelsVisible: true };
 
 const plane = new THREE.Mesh(
   new THREE.PlaneGeometry(10, 10),
-  new THREE.MeshBasicMaterial({ color: 0x00ff00 })
+  new THREE.MeshNormalMaterial({})
 );
 plane.rotation.x = -Math.PI / 2;
-plane.visible = false;
+// plane.visible = false;
+plane.visible = true;
 scene.add(plane);
 
 const geometry = new THREE.IcosahedronGeometry(1, 1);
