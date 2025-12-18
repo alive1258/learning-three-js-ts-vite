@@ -74,42 +74,35 @@ export const SidebarItemsData: SidebarItem[] = [
             module_id: 1,
             Icon: AiOutlineTransaction,
           },
-          {
-            id: 223,
-            name: "LoadingAssets",
-            path: "/dashboard/loading-assets",
-            module_id: 1,
-            Icon: AiOutlineTransaction,
-          },
         ],
       },
     ],
   },
   {
     id: 3,
-    name: "Branches",
+    name: "Threejs Loading",
     module_id: 1,
     path: "", // Empty path = collapsible parent
     Icon: AiOutlineTransaction,
     sub: [
       {
-        id: 31,
-        name: "All Branches",
-        path: "/branches/all",
+        id: 223,
+        name: "Loading Multiple Assets",
+        path: "/dashboard/loading-multiple-assets",
         module_id: 1,
         Icon: AiOutlineTransaction,
       },
       {
         id: 32,
-        name: "Branch Management",
+        name: "Loading",
         path: "", // Empty path = collapsible parent
         module_id: 1,
         Icon: AiOutlineTransaction,
         sub: [
           {
             id: 321,
-            name: "Add Branch",
-            path: "/branches/manage/add",
+            name: "Loading Multiple ",
+            path: "/dashboard/loading-assets",
             module_id: 1,
             Icon: AiOutlineTransaction,
           },
