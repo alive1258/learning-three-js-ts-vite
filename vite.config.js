@@ -6,4 +6,5 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), topLevelAwait(), tailwindcss()],
   base: "./",
+  assetsInclude: ["**/*.hdr", "**/*.glb"],
 });

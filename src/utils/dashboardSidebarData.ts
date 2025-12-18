@@ -76,8 +76,8 @@ export const SidebarItemsData: SidebarItem[] = [
           },
           {
             id: 223,
-            name: "Manage Plans",
-            path: "/subscription/plans/manage",
+            name: "LoadingAssets",
+            path: "/dashboard/loading-assets",
             module_id: 1,
             Icon: AiOutlineTransaction,
           },

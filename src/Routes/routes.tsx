@@ -5,7 +5,8 @@ import Dashboard from "../components/Dashboard/Dashboard/Dashboard";
 import Geometries from "../components/Dashboard/Geometries/Geometries";
 import Camera from "../components/Dashboard/Camera/Camera";
 import Materials from "../components/Dashboard/Materials/Materials";
-import CommonMaterials from "../components/Dashboard/CommonMaterials/commonMaterials";
+import CommonMaterials from "../components/Dashboard/CommonMaterials/CommonMaterials";
+import LoadingAssets from "../components/Dashboard/LoadingAssets/LoadingAssets";
 
 const router = createBrowserRouter([
   // admin
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/common-materials",
         element: <CommonMaterials />,
+      },
+      {
+        path: "/dashboard/loading-assets",
+        element: <LoadingAssets />,
       },
     ],
   },
